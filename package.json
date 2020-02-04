@@ -1,0 +1,50 @@
+{
+  "name": "quark-service",
+  "version": "1.0.0",
+  "description": "Boilerplate to create a microservice",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./dist/index.js",
+    "build": "tsc",
+    "test": "",
+    "dev": "nodemon --exec ts-node ./src/index.ts",
+    "dev:debug": "nodemon --inspect ./src/index.ts",
+    "lint": "eslint src/**/*.ts",
+    "format": "npm run prettier -- --write",
+    "prettier": "prettier \"**/*.{ts,json,md,graphql}\"",
+    "validate": "npm run lint && npm run format && npm run prettier -- --list-different && npm run build"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/escalonc/quark-service.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/escalonc/quark-service/issues"
+  },
+  "homepage": "https://github.com/escalonc/quark-service#readme",
+  "dependencies": {
+    "@hapi/hapi": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/hapi": "^18.0.3",
+    "@types/node": "^13.7.0",
+    "@typescript-eslint/eslint-plugin": "^2.19.0",
+    "@typescript-eslint/parser": "^2.19.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "husky": "^4.2.1",
+    "lint-staged": "^10.0.7",
+    "nodemon": "^2.0.2",
+    "prettier": "^1.19.1",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.7.5"
+  }
+}
