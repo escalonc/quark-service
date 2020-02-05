@@ -1,8 +1,7 @@
-import { init } from "server";
+import Server from './server';
+import { conf } from './config/default';
 
-process.on("unhandledRejection", err => {
-  console.log(err);
-  process.exit(1);
-});
+const { manifest, options } = conf;
+const server = new Server();
 
-init();
+server.init(manifest, options);
