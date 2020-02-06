@@ -14,7 +14,7 @@ class HapiServer implements ServerConfiguration {
 
       await Server.start();
 
-      console.log('Server started', Server.info.uri);
+      console.log('Server started 🚀', Server.info.uri);
     } catch (e) {
       console.log('An error has happened!');
       console.log(e);

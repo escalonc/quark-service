@@ -1,16 +1,9 @@
 import fg from 'fast-glob';
 import { ServerRoute } from '@hapi/hapi';
 
-let routes: ServerRoute[] = [];
-let route = null;
-
 const paths = fg.sync('**/*Route.{js,ts}', { dot: true });
-const modules = paths.map(path => {
-  route = require(`${process.cwd()}/${path}`).default;
+const routeModules: ServerRoute[] = paths
+  .map(path => require(`${process.cwd()}/${path}`).default)
+  .flat();
 
-  return route;
-});
-
-routes = modules.flat();
-
-export default () => routes;
+export default () => routeModules;

@@ -1,7 +1,6 @@
 import { ResponseToolkit, Request } from '@hapi/hapi';
 
-const all = (request: Request, h: ResponseToolkit) => {
-  console.log(request);
+const all = (_request: Request, h: ResponseToolkit) => {
   // below you can see the query element from request from which you can have access to payload and query
   // const { query } = request;
   // const { from, limit } = query;

@@ -2,7 +2,7 @@ import confidence from 'confidence';
 import pack from '../../package.json';
 import { Manifest, Options } from '@hapi/glue';
 
-enum Environments {
+export enum Environments {
   Development = 'development',
   Production = 'production',
   Test = 'test',
