@@ -27,7 +27,7 @@ const conf: ServerConfiguration = {
   manifest: {
     server: {
       port: 8001,
-      host: 'localhost',
+      host: '0.0.0.0',
       routes: {
         cors: {
           origin: ['*'],
