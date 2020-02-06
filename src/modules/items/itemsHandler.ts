@@ -1,18 +1,18 @@
-import { ResponseToolkit } from '@hapi/hapi';
+import { ResponseToolkit, Request } from '@hapi/hapi';
 
-const all = (request: object, h: ResponseToolkit) => {
+const all = (request: Request, h: ResponseToolkit) => {
   console.log(request);
   // below you can see the query element from request from which you can have access to payload and query
   // const { query } = request;
   // const { from, limit } = query;
 
   let statusCode = 500;
-  let content = {};
+  let data = {};
 
   try {
     // call to some service is mocked here this must be a async method that awaits service call or method
     statusCode = 200;
-    content = [
+    data = [
       {
         name: 'pepe',
         level: 9999,
@@ -25,12 +25,12 @@ const all = (request: object, h: ResponseToolkit) => {
       },
     ];
   } catch (err) {
-    content = err;
+    data = err;
   }
 
   return h
     .response({
-      content,
+      data,
     })
     .code(statusCode);
 };
