@@ -1,7 +1,7 @@
 import Joi from '@hapi/joi';
 import { ServerRoute } from '@hapi/hapi';
 
-import { all } from '../modules/items/itemsHandler';
+import { all } from './itemsHandler';
 
 let ThisModule: ServerRoute[] = [
   {
