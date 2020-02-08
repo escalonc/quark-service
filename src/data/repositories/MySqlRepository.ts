@@ -1,20 +1,14 @@
 import BaseRepository from '../baseRepository';
 import { MySqlConnectionFactory } from 'data/factories/MySqlConnectionFactory';
-import DatabaseConfiguration from 'data/databaseConfiguration';
+import { get } from '../../config/default';
 
 export default class MySqlRepository<TShow, TCreate, TUpdate>
   implements BaseRepository<TShow, TCreate, TUpdate> {
   private readonly connectionFactory: MySqlConnectionFactory = new MySqlConnectionFactory();
-  private readonly databaseConfiguration: DatabaseConfiguration = {
-    database: '',
-    host: '',
-    password: '',
-    user: '',
-  };
 
   async all(): Promise<TShow[]> {
     const connection = await this.connectionFactory.create(
-      this.databaseConfiguration
+      get('databaseConfiguration')
     );
 
     const data = await connection.query('select * from todos');

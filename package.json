@@ -44,7 +44,7 @@
     "good-console": "^8.0.0",
     "hapi-auth-bearer-token": "^6.1.4",
     "hapi-swagger": "^12.1.0",
-    "mysql2": "^2.1.0"
+    "mariadb": "^2.2.0"
   },
   "devDependencies": {
     "@types/confidence": "^1.4.30",

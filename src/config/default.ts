@@ -1,6 +1,7 @@
 import confidence from 'confidence';
 import pack from '../../package.json';
 import { Manifest, Options } from '@hapi/glue';
+import DatabaseConfiguration from 'data/databaseConfiguration.js';
 
 export enum Environments {
   Development = 'development',
@@ -11,6 +12,7 @@ export enum Environments {
 export interface AppConfiguration {
   env: string;
   appName: string;
+  databaseConfiguration: DatabaseConfiguration;
 }
 
 export interface ServerConfiguration {
@@ -23,6 +25,12 @@ const conf: ServerConfiguration = {
   app: {
     env: process.env.NODE_ENV || Environments.Development,
     appName: pack.name,
+    databaseConfiguration: {
+      database: '',
+      host: '',
+      password: '',
+      user: '',
+    },
   },
   manifest: {
     server: {

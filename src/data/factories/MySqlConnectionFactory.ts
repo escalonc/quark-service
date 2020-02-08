@@ -1,4 +1,4 @@
-import { Connection, createConnection } from 'mysql2/promise';
+import { Connection, createConnection } from 'mariadb';
 import DatabaseConfiguration from 'data/databaseConfiguration';
 
 export class MySqlConnectionFactory {
