@@ -12,18 +12,7 @@ const all = (request: Request, h: ResponseToolkit) => {
   try {
     // call to some service is mocked here this must be a async method that awaits service call or method
     statusCode = 200;
-    data = [
-      {
-        name: 'pepe',
-        level: 9999,
-        type: 'god',
-      },
-      {
-        name: 'normie',
-        level: 0,
-        type: 'snowflake',
-      },
-    ];
+    data = { host: request.info.hostname, date: new Date() };
   } catch (err) {
     data = err;
   }

@@ -40,22 +40,22 @@ const conf: ServerConfiguration = {
       plugins: [
         { plugin: '@hapi/vision' },
         { plugin: '@hapi/inert' },
-        {
-          plugin: 'good',
-          options: {
-            ops: {
-              interval: 15000,
-            },
-            reporters: {
-              myConsoleReporter: [
-                {
-                  module: 'good-console',
-                },
-                'stdout',
-              ],
-            },
-          },
-        },
+        // {
+        //   plugin: 'good',
+        //   options: {
+        //     ops: {
+        //       interval: 15000,
+        //     },
+        //     reporters: {
+        //       myConsoleReporter: [
+        //         {
+        //           module: 'good-console',
+        //         },
+        //         'stdout',
+        //       ],
+        //     },
+        //   },
+        // },
         {
           plugin: 'hapi-swagger',
           options: {
