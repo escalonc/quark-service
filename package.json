@@ -38,7 +38,7 @@
     "@hapi/joi": "^17.1.0",
     "@hapi/lab": "^22.0.3",
     "@hapi/vision": "^6.0.0",
-    "confidence": "^4.0.2",
+    "confidence": "^5.0.1",
     "good": "^8.1.2",
     "good-console": "^8.0.0",
     "hapi-auth-bearer-token": "^6.1.4",
